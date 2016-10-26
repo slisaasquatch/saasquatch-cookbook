@@ -1,3 +1,4 @@
+include_recipe 'geoip'
 include_recipe 'git'
 include_recipe 'java'
 include_recipe 'mongodb3'

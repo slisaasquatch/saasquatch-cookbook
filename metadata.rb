@@ -1,6 +1,7 @@
 name 'saasquatch'
 version '0.0.1'
 
+depends 'geoip', '~> 0.1.0'
 depends 'git', '~> 5.0.1'
 depends 'java', '~> 1.42.0'
 depends 'mongodb3', '~> 5.3.0'
