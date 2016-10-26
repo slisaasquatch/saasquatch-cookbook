@@ -11,6 +11,10 @@ platforms:
 
 suites:
   - name: default
+    driver:
+      customize:
+        memory: 8192
+        cpus: 4
     run_list:
       - recipe[saasquatch::env_setup]
       - recipe[saasquatch::default]
