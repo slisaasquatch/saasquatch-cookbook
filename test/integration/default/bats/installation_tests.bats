@@ -10,6 +10,11 @@
   [ "$status" -eq 0 ]
 }
 
+@test "mongo binary is found in PATH" {
+  run which mongo
+  [ "$status" -eq 0 ]
+}
+
 @test "npm binary is found in PATH" {
   run which npm
   [ "$status" -eq 0 ]
