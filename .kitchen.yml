@@ -17,5 +17,6 @@ suites:
         cpus: 4
     run_list:
       - recipe[saasquatch::env_setup]
+      - recipe[saasquatch::install_geoip]
       - recipe[saasquatch::default]
     attributes:
