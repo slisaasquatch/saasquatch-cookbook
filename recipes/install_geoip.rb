@@ -5,7 +5,7 @@ GEOIP_FN = 'GeoLite2-City.mmdb'
 GEOIP_ABS = GEOIP_DIR + '/' + GEOIP_FN
 
 unless File.file?(GEOIP_ABS) then
-    directory GEOIP_DIR do
+  directory GEOIP_DIR do
     action :create
   end
 
