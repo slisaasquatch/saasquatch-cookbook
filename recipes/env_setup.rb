@@ -20,32 +20,19 @@ def bash_script_append(str)
 end
 
 def construct_export_line(key, val)
-  trimmedKey = key.strip
-  if trimmedKey.nil? then
-    trimmedKey = key
-  end
-  if trimmedKey.empty? then
-    return ''
-  end
-  # if val.start_with?(' ') || val.end_with?(' ') then
-  if val.include?(' ') && !(val.start_with?('"') && val.end_with?('"')) then
-    val = '"' + val + '"'
-  end
+  key.strip!
+  return '' if key.empty?
+  val = '"' + val + '"' unless val.start_with?('"') && val.end_with?('"')
   return 'export ' + key + '=' + val
 end
 
 def add_env(key, val)
   export_line = construct_export_line(key, val)
-  unless bash_script_contains(export_line) then
-    bash_script_append(export_line)
+  bash_script_append(export_line) unless bash_script_contains(export_line)
+  execute 'set env ' + key do
+    command export_line
   end
 end
 
-script 'env_setup' do
-  interpreter 'bash'
-  code <<-EOH
-    TODO
-  EOH
-end
 
 log 'Finished configuring env variables'
