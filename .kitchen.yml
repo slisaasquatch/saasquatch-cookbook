@@ -19,6 +19,7 @@ suites:
         - ["forwarded_port", {guest: 9000, host: 9000}]
         - ["forwarded_port", {guest: 8000, host: 8000}]
         - ["forwarded_port", {guest: 7000, host: 7000}]
+        - ["forwarded_port", {guest: 10014, host: 10014}] # For cache
     run_list:
       - recipe[saasquatch::env_setup]
       - recipe[saasquatch::install_geoip]
