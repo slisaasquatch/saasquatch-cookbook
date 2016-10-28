@@ -13,7 +13,7 @@ end
 
 def construct_export_line(key, val)
   key.strip!
-  return '' if key.empty?
+  return '' if key.empty? || val.empty?
   val = '"' + val + '"' unless val.start_with?('"') && val.end_with?('"')
   return 'export ' + key + '=' + val
 end
