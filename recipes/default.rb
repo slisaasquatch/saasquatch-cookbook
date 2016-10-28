@@ -6,22 +6,37 @@ include_recipe 'nodejs::nodejs_from_binary'
 include_recipe 'chef-sbt' unless system('which sbt')
 include_recipe 'zip'
 
-execute 'clone_repo' do
-  command 'git clone -b play23 https://TODO@github.com/yupiq/saasquatch.git'
-  creates 'saasquatch'
-  cwd '/home/vagrant'
-end
+require_relative 'constants.rb'
 
-log 'Finished cloning repo'
+# execute 'clone_repo' do
+#   command 'git clone -b play23 https://TODO@github.com/yupiq/saasquatch.git'
+#   creates 'saasquatch'
+#   cwd Constants.user_home
+# end
+#
+# log 'Finished cloning repo'
 
 # execute 'sbt_dist' do
 #   command 'sbt dist'
 #   creates 'target/universal/saasquatch-1.3.0.zip'
-#   cwd 'home/vagrant/saasquatch'
+#   cwd Constants.user_home + '/saasquatch'
+# end
+
+# execute 'download_zip' do
+#   command 'wget '
+#   creates 'saasquatch-1.3.0.zip'
+#   cwd Constants.user_home
 # end
 
 # execute 'unzip' do
-#
+#   command 'unzip saasquatch-1.3.0.zip'
+#   creates 'saasquatch-1.3.0'
+#   cwd Constants.user_home
+# end
+
+# execute 'chmod_saasquatch' do
+#   command 'chmod +x bin/saasquatch'
+#   cwd Constants.user_home + '/saasquatch'
 # end
 
 log 'This is useless'
