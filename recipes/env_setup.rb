@@ -28,4 +28,4 @@ end
 
 # TODO add env variables
 
-log 'Finished configuring env variables'
+log 'Done configuring env variables'

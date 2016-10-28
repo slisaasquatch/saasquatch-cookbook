@@ -1,10 +1,14 @@
 # The geoip cookbook on Chef Supermarket is not working
 
-GEOIP_DIR = '/home/vagrant/geoip'
+require_relative 'constants.rb'
+
+GEOIP_DIR = Constants.user_home + '/geoip'
 GEOIP_FN = 'GeoLite2-City.mmdb'
 GEOIP_ABS = GEOIP_DIR + '/' + GEOIP_FN
 
-unless File.file?(GEOIP_ABS) then
+if File.file?(GEOIP_ABS) then
+  log 'GeoIP already installed'
+else
   directory GEOIP_DIR do
     action :create
   end
