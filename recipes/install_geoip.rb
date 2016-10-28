@@ -1,6 +1,7 @@
 # The geoip cookbook on Chef Supermarket is not working
 
 require_relative 'constants.rb'
+require_relative 'env_util.rb'
 
 GEOIP_DIR = Constants.user_home + '/geoip'
 GEOIP_FN = 'GeoLite2-City.mmdb'
@@ -26,8 +27,6 @@ end
 
 log 'Done installing GeoIP'
 
-execute 'set_geoip_env' do
-  command 'export MAXMIND_DB_PATH=' + GEOIP_ABS
-end
+EnvUtil.add_env('MAXMIND_DB_PATH', GEOIP_ABS)
 
 log 'Done setting GeoIP env variable'
