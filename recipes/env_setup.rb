@@ -26,5 +26,6 @@ def add_env(key, val)
   end
 end
 
+# TODO add env variables
 
 log 'Finished configuring env variables'
