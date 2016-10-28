@@ -15,9 +15,6 @@ module EnvUtil
   def self.add_env(key, val)
     export_line = construct_export_line(key, val)
     file_append(bash_script_name, export_line) unless file_contains(bash_script_name, export_line)
-    # execute 'set env ' + key do
-    #   command export_line
-    # end
     system(export_line)
   end
 
