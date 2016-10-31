@@ -1,3 +1,5 @@
+require_relative 'constants.rb'
+
 module EnvUtil
 
   def self.file_contains(fn, str)
@@ -9,7 +11,7 @@ module EnvUtil
   end
 
   def self.bash_script_name
-    '/home/vagrant/.bashrc'
+    Constants.user_home + '/.bashrc'
   end
 
   def self.add_env(key, val)
