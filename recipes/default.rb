@@ -27,7 +27,11 @@ execute 'unzip' do
   cwd Constants.user_home
 end
 
-execute 'chmod_saasquatch' do
+execute 'chmod_saasquatch_dir' do
+  command 'chmod o+w ' + Constants.saasquatch_dir_abs
+end
+
+execute 'chmod_executable' do
   command 'chmod +x bin/saasquatch'
   cwd Constants.saasquatch_dir_abs
 end
