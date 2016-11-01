@@ -16,7 +16,8 @@ require_relative 'constants.rb'
 # end
 
 execute 'download_zip' do
-  command 'wget TODO'
+  command 'wget -O ' + Constants.saasquatch_zip_name + ' '\
+      'TODO'
   creates Constants.saasquatch_zip_name
   cwd Constants.user_home
 end

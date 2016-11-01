@@ -13,7 +13,7 @@ module Constants
   end
 
   def self.saasquatch_zip_name
-    'saasquatch-1.3.00.zip'
+    'saasquatch-1.3.0.zip'
   end
 
 end
