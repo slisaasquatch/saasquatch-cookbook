@@ -8,8 +8,12 @@ module Constants
     'saasquatch-1.3.0'
   end
 
+  def self.saasquatch_dir_abs
+    user_home + '/' + saasquatch_dir_name
+  end
+
   def self.saasquatch_zip_name
-    saasquatch_dir_name + '.zip'
+    'saasquatch-1.3.00.zip'
   end
 
 end
