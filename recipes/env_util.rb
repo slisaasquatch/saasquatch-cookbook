@@ -15,6 +15,9 @@ module EnvUtil
   end
 
   def self.add_env(key, val)
+    key.strip!
+    return false if key.empty? || val.empty?
+    ENV[key] = val
     export_line = construct_export_line(key, val)
     file_append(bash_script_name, export_line) unless file_contains(bash_script_name, export_line)
     system(export_line)
