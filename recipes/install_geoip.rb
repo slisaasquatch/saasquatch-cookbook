@@ -3,7 +3,7 @@
 require_relative 'constants.rb'
 require_relative 'env_util.rb'
 
-GEOIP_DIR = Constants.user_home + '/geoip'
+GEOIP_DIR = '/usr/local/share/GeoIP'
 GEOIP_FN = 'GeoLite2-City.mmdb'
 GEOIP_ABS = GEOIP_DIR + '/' + GEOIP_FN
 
